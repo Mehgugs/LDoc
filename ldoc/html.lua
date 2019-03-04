@@ -283,7 +283,8 @@ function ldoc.source_ref (fun)
       local out, err = template.substitute(template_str, {
          ldoc = ldoc,
          module = module,
-         _escape = ldoc.template_escape
+         _escape = ldoc.template_escape,
+         env = _ENV
       })
       if not out then
          quit(("template failed for %s: %s"):format(
